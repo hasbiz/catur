@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Catur 2D</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>♚ Game Catur</h1>
+            <p class="subtitle">Permainan Catur Klasik</p>
+        </header>
+
+        <div class="game-content">
+            <!-- Panel Info Kiri -->
+            <div class="side-panel left-panel">
+                <div class="player-info black-player">
+                    <div class="player-avatar">♚</div>
+                    <div class="player-details">
+                        <span class="player-name">Hitam</span>
+                        <div class="turn-indicator" id="black-turn"></div>
+                    </div>
+                </div>
+                <div class="captured-pieces" id="captured-by-black">
+                    <h3>Bidak Dimakan</h3>
+                    <div class="pieces-list"></div>
+                </div>
+            </div>
+
+            <!-- Papan Catur -->
+            <div class="board-wrapper">
+                <div class="board-container">
+                    <div class="file-labels top">
+                        <span>a</span><span>b</span><span>c</span><span>d</span>
+                        <span>e</span><span>f</span><span>g</span><span>h</span>
+                    </div>
+                    <div class="board-with-ranks">
+                        <div class="rank-labels left">
+                            <span>8</span><span>7</span><span>6</span><span>5</span>
+                            <span>4</span><span>3</span><span>2</span><span>1</span>
+                        </div>
+                        <div class="chess-board" id="chess-board"></div>
+                        <div class="rank-labels right">
+                            <span>8</span><span>7</span><span>6</span><span>5</span>
+                            <span>4</span><span>3</span><span>2</span><span>1</span>
+                        </div>
+                    </div>
+                    <div class="file-labels bottom">
+                        <span>a</span><span>b</span><span>c</span><span>d</span>
+                        <span>e</span><span>f</span><span>g</span><span>h</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel Info Kanan -->
+            <div class="side-panel right-panel">
+                <div class="player-info white-player">
+                    <div class="player-avatar">♔</div>
+                    <div class="player-details">
+                        <span class="player-name">Putih</span>
+                        <div class="turn-indicator active" id="white-turn"></div>
+                    </div>
+                </div>
+                <div class="captured-pieces" id="captured-by-white">
+                    <h3>Bidak Dimakan</h3>
+                    <div class="pieces-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Status -->
+        <div class="game-status" id="game-status">
+            <span class="status-text">Giliran: Putih</span>
+        </div>
+
+        <!-- Tombol Kontrol -->
+        <div class="game-controls">
+            <button class="control-btn" id="new-game-btn">
+                <span>🔄</span> Game Baru
+            </button>
+            <button class="control-btn" id="undo-btn">
+                <span>↩️</span> Undo
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Promosi Pion -->
+    <div class="modal" id="promotion-modal">
+        <div class="modal-content">
+            <h2>Pilih Bidak Promosi</h2>
+            <div class="promotion-options" id="promotion-options"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
